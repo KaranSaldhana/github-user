@@ -1,10 +1,22 @@
 .search-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
+  min-width: 150px;
+  margin: 0 20px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.search-card-image img{
+  width: 60px;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+}
+
+.user-table img {
+  width: 60px;
+  margin: 0;
+}

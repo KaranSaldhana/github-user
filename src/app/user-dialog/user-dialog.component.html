@@ -1,33 +1,49 @@
-<mat-card class="example-card">
+<mat-card class="user-dialog-card">
     <mat-card-header>
-        <div mat-card-avatar class="example-header-image">
+        <div mat-card-avatar class="user-dialog-image">
             <img mat-card-image src="{{data.avatar_url}}" alt="user details">
         </div>
-        <mat-card-title>{{data.name}}</mat-card-title>
-        <mat-card-subtitle>
-            <p>
+        <mat-card-title class="user-dialog-title">{{data.name}}</mat-card-title>
+        <mat-card-subtitle class="user-dialog-subtitle">
+            <p *ngIf="data.email">
                 Email - {{data.email}}
-                <a href="{{data.html_url}}">Github Link</a>
-                <a href="{{data.blog}}">Blog Link</a>
+            </p>
+            <p *ngIf="data.html_url">
+                <a href="{{data.html_url}}" target="_blank">Github Link</a>
+            </p>
+            <p *ngIf="data.blog">
+                <a href="{{data.blog}}" target="_blank">Blog Link</a>
+            </p>
+            <p *ngIf="data.company">
                 Company - {{data.company}}
+            </p>
+            <p *ngIf="data.location">
                 Location - {{data.location}}
-                Created At - {{data.created_at}}
+            </p>
+            <p>
+                Created At - {{data.created_at | date: 'mediumDate'}}
             </p>
         </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-content class="user-dialog-content">
         <p>
             {{data.bio}}
         </p>
-        <mat-grid-list cols="4">
-            <mat-grid-tile>Type: {{data.type}}</mat-grid-tile>
-            <mat-grid-tile>Followers<a href="{{data.followers_url}}">{{data.followers}}</a></mat-grid-tile>
-            <mat-grid-tile>Following<a href="{{data.following_url}}">{{data.following}}</a></mat-grid-tile>
-            <mat-grid-tile>Public Repos<a href="{{data.repos_url}}">{{data.public_repos}}</a></mat-grid-tile>
-            <mat-grid-tile>Twitter username - {{data.twitter_username}}</mat-grid-tile>
-        </mat-grid-list>
+        <p>
+            Type: {{data.type}}
+        </p>
+        <p>
+            Followers: <a href="{{data.followers_url}}" target="_blank">{{data.followers}}</a>
+        </p>
+        <p>
+            Following: <a href="{{data.following_url}}" target="_blank">{{data.following}}</a>
+        </p>
+        <p>
+            Public Repos: <a href="{{data.repos_url}}" target="_blank">{{data.public_repos}}</a>
+        </p>
     </mat-card-content>
-    <mat-card-actions>
-        <button mat-button (click)="closeDialog()">Close</button>
-    </mat-card-actions>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" (click)="closeDialog()">Close</button>
+    </mat-dialog-actions>
 </mat-card>

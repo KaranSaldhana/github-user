@@ -1,0 +1,38 @@
+.user-dialog {
+    padding: 0 10px;
+}
+
+a:link {
+    color: #0d0dbf;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4b4bce;
+    text-decoration: underline;
+}
+
+.user-dialog-title {
+    margin: 10px 20px;
+}
+
+.user-dialog-subtitle {
+    margin: 0 20px;
+}
+
+.user-dialog-image img {
+    width: 60px;
+    margin: 0;
+}
+
+.mat-divider {
+    border-top-width: 2px;
+}
+
+.user-dialog-content {
+    margin-top: 10px;
+}

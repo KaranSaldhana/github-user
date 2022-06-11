@@ -27,7 +27,7 @@ export class GithubUsersService {
     return this.http.get<UserDetails>(this.githubUsersUrl + username, {
       headers: {
         Accept: 'application/vnd.github.v3+json',
-        authorization: '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'
+        authorization: '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' // NOTE: this token will expire in 7 days
       }
     }).pipe(
       tap(users => users ? console.log('User Found') : console.log('User Not Found')),

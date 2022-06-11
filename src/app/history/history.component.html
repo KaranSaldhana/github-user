@@ -1,1 +1,34 @@
-<p>history works!</p>
+<div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="index">
+            <th mat-header-cell *matHeaderCellDef>No.</th>
+            <td mat-cell *matCellDef="let index=index">{{index + 1}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>Username</th>
+            <td mat-cell *matCellDef="let element">{{element.username}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element">{{element.status}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element"><button *ngIf="element.status === 'Found'" mat-button
+                    (click)="getUserDetails(element)">More Details</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div align="end" class="clear-hist">
+        <button mat-raised-button color="warn" (click)="clearHistory()">Clear History</button>
+    </div>
+</div>

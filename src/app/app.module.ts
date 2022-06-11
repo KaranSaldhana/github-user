@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,13 +18,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
 import { HistoryComponent } from './history/history.component';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     HistoryComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,8 +34,10 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
     MatInputModule,
     MatCardModule,
     MatDialogModule,
+    MatDividerModule,
     MatIconModule,
     MatGridListModule,
+    MatTableModule,
     HttpClientModule,
     AppRoutingModule,
     NoopAnimationsModule,
